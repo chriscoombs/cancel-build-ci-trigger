@@ -1,0 +1,60 @@
+{
+    "manifestVersion": 1,
+    "id": "cancel-build-ci-trigger",
+    "name": "Cancel Build for CI Trigger",
+    "version": "0.0.1",
+    "publisher": "chriscoombs",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services.Cloud"
+        }
+    ],    
+    "description": "Compares the files in the triggering commit, with the CI path filters. If the CI path filters do not include (or exclude) the files in the triggering commit, the build is cancelled.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "files": [
+        {
+            "path": "function/dist/index.js", "packagePath": "function/index.js"
+        },
+        {
+            "path": "function/dist/main.js", "packagePath": "function/main.js"
+        },
+        {
+            "path": "function/task.json", "packagePath": "function/task.json"
+        },
+        {
+            "path": "function/node_modules", "packagePath": "function/node_modules"
+        },
+        {
+            "path": "images/oauth.png", "packagePath": "images/oauth.png", "addressable": true
+        },
+        {
+            "path": "images/allow.png", "packagePath": "images/allow.png", "addressable": true
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "function"
+            }
+        }
+    ],
+    "content": {
+        "details": {
+            "path": "marketplace.md"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/chriscoombs/cancel-build-ci-trigger"
+    }
+}
