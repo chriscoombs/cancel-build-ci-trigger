@@ -1,6 +1,6 @@
 {
   "name": "cancel-build-ci-trigger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Compares the files in the triggering commit, with the CI path filters. If the CI path filters do not include (or exclude) the files in the triggering commit, the build is cancelled.",
   "main": "index.js",
   "scripts": {

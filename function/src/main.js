@@ -37,13 +37,15 @@ const isInPathFilters = (files, definition) => {
 
 const run = async () => {
   try {
-    console.log('Getting environemnt variables...');
+    console.log('Getting environment variables...');
     const commitId = task.getVariable('Build.SourceVersion');
     const sourcesDirectory = task.getVariable('Build.SourcesDirectory');
     const buildId = parseInt(task.getVariable('Build.BuildId'), 10);
     const project = task.getVariable('System.TeamProject');
     const reason = task.getVariable('Build.Reason');
-    if (reason === 'IndividualCI' || reason === 'BatchedCI') {
+    const sourceBranch = task.getVariable('Build.SourceBranch');
+    if (!(sourceBranch.startsWith('refs/heads/release') || sourceBranch.startsWith('refs/heads/master'))
+      && (reason === 'IndividualCI' || reason === 'BatchedCI')) {
       console.log('Connecting to Build API...');
       const buildApi = await getConnection().getBuildApi();
       console.log('Getting build...');
