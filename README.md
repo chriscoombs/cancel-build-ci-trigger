@@ -6,6 +6,8 @@ This task prevents a build when a branch is pushed but contains no changes in pa
 
 The task compares the files in the triggering commit, with the CI path filters. If the CI path filters do not include (or exclude) the files in the triggering commit, the build is cancelled.
 
+This task is built for use with the Gitflow workflow. As such, release/* and master branches will not cancel.
+
 ## Build Instructions
 
 Navigate to the function directory
