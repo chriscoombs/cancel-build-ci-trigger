@@ -2,11 +2,13 @@
 
 This Azure DevOps build task augments the continuous integration (CI) trigger path filters feature.
 
-This task prevents a build when a branch is pushed but contains no changes in path.
+The task prevents a build when a branch is pushed but contains no changes in path.
+
+The primary purpose of the task is to prevent unnecessary builds on feature branches.
 
 The task compares the files in the triggering commit, with the CI path filters. If the CI path filters do not include (or exclude) the files in the triggering commit, the build is cancelled.
 
-This task is built for use with the Gitflow workflow. As such, release/* and master branches will not cancel.
+Please note that the task assumes the triggering source is following the Gitflow workflow. In order to prevent master and release branch builds from being contaminated with updates from develop, CI triggered builds on master and release branches will not be cancelled by the task. 
 
 ## Build Instructions
 

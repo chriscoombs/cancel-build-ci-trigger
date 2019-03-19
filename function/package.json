@@ -1,6 +1,6 @@
 {
   "name": "cancel-build-ci-trigger",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Compares the files in the triggering commit, with the CI path filters. If the CI path filters do not include (or exclude) the files in the triggering commit, the build is cancelled.",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "eslint": "^5.10.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "jest": "^23.6.0",
+    "jest": "^24.5.0",
     "jest-runner-eslint": "^0.7.1"
   },
   "eslintConfig": {

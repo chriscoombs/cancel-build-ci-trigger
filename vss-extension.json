@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "cancel-build-ci-trigger",
     "name": "Cancel Build for CI Trigger",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "chriscoombs",
     "targets": [
         {
